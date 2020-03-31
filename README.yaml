@@ -1,0 +1,76 @@
+---
+  #
+  # This is the canonical configuration for the `README.md`
+  # Run `make readme` to rebuild the `README.md`
+  #
+  
+  # Name of this project
+  name: terraform-aws-kops-state-bucket
+  
+  # Tags of this project
+  tags:
+    - aws
+    - terraform
+    - terraform-modules
+    - kops-kubernetes
+    - kops
+    - kubernetes
+    - s3
+    - bucket
+  
+  # Categories of this project
+  categories:
+    - terraform-modules/kops-kubernetes
+  
+  # Logo for this project
+  #logo: docs/logo.png
+  
+  # License of this project
+  license: "APACHE2"
+  
+  # Canonical GitHub repo
+  github_repo: flexdrive/terraform-aws-kops-state-bucket
+  
+  # Badges to display
+  badges:
+    - name: "Latest Release"
+      image: "https://img.shields.io/github/release/flexdrive/terraform-aws-kops-state-bucket.svg"
+      url: "https://github.com/cloudposse/terraform-aws-kops-state-bucket/releases/latest"
+  
+  related:
+    - name: "terraform-aws-kops-state-backend"
+      description: "Terraform module to provision dependencies for `kops` (config S3 bucket & DNS zone)."
+      url: "https://github.com/cloudposse/terraform-aws-kops-state-backend"
+  
+  # Short description of this project
+  description: |-
+    Terraform module to provision the state bucket for `kops`
+  
+    The module supports the following:
+  
+    1. Forced server-side encryption at rest for the S3 bucket
+    2. S3 bucket versioning to allow for `kops` state recovery in the case of accidental deletions or human errors
+    3. Block public access in bucket level by default
+  
+  # How to use this project
+  usage: |-
+    It will also create an S3 bucket with the name `fdpfm-<tenant>-kops-state` for storing `kops` state.
+  
+    ```hcl
+    module "kops" {
+      source           = "git::https://github.com/flexdrive/terraform-aws-kops-state-bucket.git?ref=master"
+      namespace        = "eg"
+      stage            = "prod"
+      name             = "kops-state"
+      region           = "us-east-1"
+    }
+    ```
+  
+  include:
+    - "docs/targets.md"
+    - "docs/terraform.md"
+  
+  # Contributors to this project
+  contributors:
+    - name: "Tega McKinney"
+      github: "tegamckinney"
