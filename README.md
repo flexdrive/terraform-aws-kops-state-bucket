@@ -39,7 +39,7 @@
 
   -->
 
-# terraform-aws-kops-state-bucket [![Latest Release](https://img.shields.io/github/release/flexdrive/terraform-aws-kops-state-bucket.svg)](https://github.com/cloudposse/terraform-aws-kops-state-bucket/releases/latest)
+# terraform-aws-kops-state-bucket [![Latest Release](https://img.shields.io/github/release/flexdrive/terraform-aws-kops-state-bucket.svg)](https://github.com/flexdrive/terraform-aws-kops-state-bucket/releases/latest)
 
 
 Terraform module to provision the state bucket for `kops`
